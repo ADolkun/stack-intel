@@ -106,7 +106,7 @@ Environment variables:
 "pypi:stack-intel" = "0.3.0"
 ```
 
-`mise install` installs it. Callers run `mise exec -- stack-intel <command>`, or `stack-intel <command>` in a shell where mise is activated. Only a released version can be pinned this way; a commit that is not yet released needs the [`requirements.txt` pin](#install-and-launch).
+`mise install` installs it. Callers run `mise exec -- stack-intel <command>`, or `stack-intel <command>` in a shell where mise is activated. A commit not yet released is pinned by its full SHA: `"pypi:ADolkun/stack-intel" = "<full commit sha>"`.
 
 mise finds `mise.toml` from any subdirectory, so the MCP client entry needs no git alias:
 

@@ -144,7 +144,7 @@ The full reference lives in [`docs/`](https://github.com/ADolkun/stack-intel/blo
 
 | Page | Covers |
 | --- | --- |
-| [Install](https://github.com/ADolkun/stack-intel/blob/main/docs/install.md) | Requirements, pinning, the launcher, the MCP client entry, the TypeScript install, environment variables, worktrees |
+| [Install](https://github.com/ADolkun/stack-intel/blob/main/docs/install.md) | Requirements, pinning, the launcher, the MCP client entry, the TypeScript install, environment variables, mise, worktrees |
 | [Commands](https://github.com/ADolkun/stack-intel/blob/main/docs/commands.md) | Every command, its options and exit codes |
 | [Configuration](https://github.com/ADolkun/stack-intel/blob/main/docs/configuration.md) | `.stack-intel/config.toml` table by table, and partial configs |
 | [Tools](https://github.com/ADolkun/stack-intel/blob/main/docs/tools.md) | The MCP tools and the response contract: error codes, diagnostic and limitation kinds |
