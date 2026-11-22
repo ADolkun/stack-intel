@@ -24,9 +24,10 @@ The package is `stack-intel` on PyPI. To try it, or to use it across repositorie
 ```sh
 uv tool install stack-intel             # the stack-intel command, on PATH
 uvx stack-intel@<version> <command>     # one run, nothing installed
+mise use -g pypi:stack-intel            # the stack-intel command, managed by mise
 ```
 
-A repository that uses it pins the version in one file, `.stack-intel/requirements.txt`, so every caller runs the same release:
+A repository that uses it pins the version in one file, `.stack-intel/requirements.txt`, so every caller runs the same release (a repository that manages its tools with mise can [pin it in `mise.toml`](https://github.com/ADolkun/stack-intel/blob/main/docs/install.md#with-mise) instead):
 
 ```
 stack-intel==<version>

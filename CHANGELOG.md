@@ -8,6 +8,7 @@ Releases up to 0.2.3 were published as `code-intel`, installed from git; the nam
 
 ### Added
 
+- Install with mise: `mise use -g pypi:stack-intel`, or a `"pypi:stack-intel"` pin in a repository's `mise.toml` (see [With mise](docs/install.md#with-mise)).
 - `doc-check` checks documented commands beyond npm scripts: pnpm, yarn and bun scripts, make targets and mise tasks, in code spans and shell fences. A command whose outcome the tracked files cannot settle is `not_checked` with the reason, never `missing`.
 
 ### Changed
