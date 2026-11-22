@@ -2,7 +2,7 @@
 
 The reference for stack-intel. The [project README](../README.md) has the overview and a quickstart.
 
-- [Install](install.md): requirements, installing and pinning the package, the launcher, the MCP client entry, the automatic TypeScript install, environment variables and worktrees.
+- [Install](install.md): requirements, installing and pinning the package, the launcher, the MCP client entry, the automatic TypeScript install, environment variables, mise and worktrees.
 - [Commands](commands.md): every command, its options and exit codes, and running the TypeScript helper by hand.
 - [Configuration](configuration.md): `.stack-intel/config.toml`, table by table, and partial configs.
 - [Tools](tools.md): the MCP tools, their arguments and output, and the response contract with every error code, diagnostic kind and limitation kind.

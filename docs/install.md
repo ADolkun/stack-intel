@@ -24,9 +24,10 @@ The package is `stack-intel` on PyPI. To try it, or to use it across repositorie
 ```sh
 uv tool install stack-intel             # the stack-intel command, on PATH
 uvx stack-intel@<version> <command>     # one run, nothing installed
+mise use -g pypi:stack-intel            # the stack-intel command, managed by mise
 ```
 
-A repository that uses it pins the version in one file, `.stack-intel/requirements.txt`, so every caller runs the same release:
+A repository that uses it pins the version in one file, `.stack-intel/requirements.txt`, so every caller runs the same release (or in `mise.toml`; see [With mise](#with-mise)):
 
 ```
 stack-intel==0.3.0
@@ -95,6 +96,32 @@ Environment variables:
 | `STACK_INTEL_CACHE_DIR` | Where the automatic install and `setup` put TypeScript. Default: `~/.cache/stack-intel`. |
 | `STACK_INTEL_NO_AUTO_SETUP` | Set to `1` to turn off the automatic TypeScript install: a missing TypeScript is reported as `frontend_unavailable`, as before 0.2.1. |
 | `STACK_INTEL_REQUIRE_TOOLCHAIN` | Set to `1` in the test suite: a test that needs Node, TypeScript, git or FastAPI fails instead of skipping when it is missing. |
+
+## With mise
+
+[mise](https://mise.jdx.dev/) installs PyPI packages through its `pypi:` backend, which installs with `uv` when `uv` is available. A repository that manages its tools with mise can pin the release in its `mise.toml` instead of `.stack-intel/requirements.txt`:
+
+```toml
+[tools]
+"pypi:stack-intel" = "0.3.0"
+```
+
+`mise install` installs it. Callers run `mise exec -- stack-intel <command>`, or `stack-intel <command>` in a shell where mise is activated. A commit not yet released is pinned by its full SHA: `"pypi:ADolkun/stack-intel" = "<full commit sha>"`.
+
+mise finds `mise.toml` from any subdirectory, so the MCP client entry needs no git alias:
+
+```json
+{
+  "mcpServers": {
+    "stack-intel": {
+      "command": "mise",
+      "args": ["exec", "--", "stack-intel", "mcp"]
+    }
+  }
+}
+```
+
+A client started from a GUI may not have mise on its `PATH`; give `command` the absolute path that `which mise` prints. The [requirements](#requirements) are the same: Python 3.14 for the installed tool, and Node.js for the frontend analysis.
 
 ## Worktrees
 
