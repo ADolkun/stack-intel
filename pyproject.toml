@@ -56,7 +56,7 @@ fastapi-live = [
     "starlette>=1.10.0",
 ]
 fastapi-copy = [
-    "fastapi<0.137",
+    "fastapi<0.166",
 ]
 
 [tool.uv]
